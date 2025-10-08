@@ -61,7 +61,6 @@ void loop() {
   else {
     Serial.println("Battery is in normal condition.");
   }
-
   Serial.println("----------------------------");
 
   delay(10000); // Delay for readability (10 seconds)
@@ -80,7 +79,7 @@ float read_current() {
 
 float read_temperature() {
   // Replace with actual temperature sensor logic
-  return 40.0;   // Dummy value
+  return 40.0;   // Dummy value 
 }
 
 
