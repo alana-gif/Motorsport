@@ -17,7 +17,7 @@ class Battery {
     }
 
     float calculate_soc() {
-      const float max_voltage = 504.0;  // Maximum voltage for a full battery
+      const float max_voltage = 390.0;  // Maximum voltage for a full battery
       soc = (voltage / max_voltage) * 100.0;
       return soc;
     }
@@ -64,23 +64,23 @@ void loop() {
 
   Serial.println("----------------------------");
 
-  delay(10000); // Delay for readability (10 seconds)
+  delay(1000); // Delay for readability (10 seconds)
 }
 
 // Example sensor reading functions
 float read_voltage() {
   // Replace with actual analogRead and scaling
-  return 210.5;  // Dummy value
+  return analogRead(A0);  // Dummy value
 }
 
 float read_current() {
   // Replace with actual sensor logic
-  return 30.0;   // Dummy value
+  return analogRead(A1);   // Dummy value
 }
 
 float read_temperature() {
   // Replace with actual temperature sensor logic
-  return 40.0;   // Dummy value
+  return analogRead(A2);   // Dummy value  
 }
 
 
