@@ -61,6 +61,7 @@ void loop() {
   else {
     Serial.println("Battery is in normal condition.");
   }
+  
   Serial.println("----------------------------");
 
   delay(10000); // Delay for readability (10 seconds)
