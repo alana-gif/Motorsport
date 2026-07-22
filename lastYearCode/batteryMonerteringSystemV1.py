@@ -26,3 +26,4 @@ while True:
 #ok no breakie wakie, no workie. you get an infinit loop or nothing
 #this is shit
 # the line above will spit an error when you kill the program because otherwise if you dont you are stuck in a long visouse loop you cant break.
+#dag nam it
