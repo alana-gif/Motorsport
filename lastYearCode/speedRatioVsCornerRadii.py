@@ -24,3 +24,4 @@ plt.legend()
 plt.show()
 
 #hopefully thats right?
+#right to me
