@@ -1,3 +1,3 @@
-# RGU Motorsport Computing department
+# RGU Motorsport Computing Department 
 
 
