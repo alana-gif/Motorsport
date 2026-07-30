@@ -1,5 +1,4 @@
 // C++ code
-//my fucking arch nemesis
 // Battery Monitoring System for Arduino
 
 class Battery {
