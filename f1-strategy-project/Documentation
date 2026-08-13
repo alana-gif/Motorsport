@@ -21,3 +21,11 @@ Pit stop time loss — how many seconds a stop costs at this circuit (entering p
 Tire delta per lap — how much faster a fresh tire is than the current tire, per lap, for the next few laps (this decays as the "rival's" tire also ages, and as your fresh tire's initial advantage fades)
 
 Current gap between the two cars
+
+
+how to run
+run in terminal:
+
+cd C:\Users\allys\Motorsport
+cd f1-strategy-project
+python pit_and_tire_analysis.py
