@@ -1,0 +1,16 @@
+#Undercut/Overcut calculator
+
+#In a race, when two cars are close together, the trailing car can try to jump the lead car 
+by pitting earlier (undercut) or later (overcut) than them.
+
+Undercut: you pit first, put on fresh tires. Fresh tires are much faster than worn ones for a 
+few laps ("out-lap" + a couple of laps after). If your fresh-tire pace advantage over those laps is 
+bigger than the gap you started with, you "jump" the other car when they pit later 
+because you were lapping faster while they were still out on old tires.
+
+Overcut: the opposite — you stay out longer on older tires while the rival pits. 
+If track position and clean air matter more than tire age at that point, staying out can gain you 
+time even though your tires are older.
+
+So in theory, what this will hopefully be able to do is that the calculator answers: "Given the current gap and tire situation, does pitting now gain or lose track position?"
+
