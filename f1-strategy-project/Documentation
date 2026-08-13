@@ -87,3 +87,5 @@ f1-strategy-project/
 ├── fs_team_data.csv          ← new (replace sample data with real data)
 ├── .gitignore
 └── requirements.txt
+
+both those files currently stored seperatly .
