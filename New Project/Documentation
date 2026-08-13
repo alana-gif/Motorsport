@@ -1,4 +1,4 @@
-#Undercut/Overcut calculator
+#Undercut/Overcut calculator project/idea
 
 #In a race, when two cars are close together, the trailing car can try to jump the lead car 
 by pitting earlier (undercut) or later (overcut) than them.
@@ -14,3 +14,10 @@ time even though your tires are older.
 
 So in theory, what this will hopefully be able to do is that the calculator answers: "Given the current gap and tire situation, does pitting now gain or lose track position?"
 
+CORE MATH
+
+Pit stop time loss — how many seconds a stop costs at this circuit (entering pit lane, stationary time, rejoining) — varies a lot by track (Monaco ~18-20s, Spa ~20s+, some tracks less)
+
+Tire delta per lap — how much faster a fresh tire is than the current tire, per lap, for the next few laps (this decays as the "rival's" tire also ages, and as your fresh tire's initial advantage fades)
+
+Current gap between the two cars
