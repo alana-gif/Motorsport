@@ -67,3 +67,23 @@ f1-strategy-project/
 ├── fs_analysis.py            ← new script I'll write for you
 ├── .gitignore
 └── requirements.txt
+
+!!!FOR USE IN FS (INTERNAL)!!!
+
+#fs_team_data.csv — this is a template with fake sample data, not your real numbers. It shows you exactly the format the script expects columns: Driver, Session, LapNumber, LapTime, TyreAge, Notes.
+
+#fs_analysis.py — reads that CSV and calculates:
+Driver swap loss — finds any lap you've marked driver swap in the Notes column, compares it to normal pace that session, tells you how much time the swap cost
+Lap time trend — per driver per session, fits a simple trend line across the run. Positive number = getting slower over the run (tire wear, fatigue), negative = getting faster (finding pace, fuel burning off)
+
+Where these files need to go
+
+Same folder as everything else:
+
+f1-strategy-project/
+├── f1_cache/
+├── pit_and_tire_analysis.py
+├── fs_analysis.py            ← new
+├── fs_team_data.csv          ← new (replace sample data with real data)
+├── .gitignore
+└── requirements.txt
