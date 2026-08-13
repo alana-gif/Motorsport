@@ -29,3 +29,41 @@ run in terminal:
 cd C:\Users\allys\Motorsport
 cd f1-strategy-project
 python pit_and_tire_analysis.py
+
+
+!!!!!!!FUTUTRE USE!!!!!!!!
+
+when wanting to use this in the futre for example internally inside FS you will need:
+
+Pit stop time loss	Driver swap time in Endurance (mandatory stop where the car changes drivers)
+Tire degradation over a stint	Lap time degradation over a run — very relevant since your tires do a full Endurance run (~22km) or multiple Autocross runs without changing
+
+What data we need :
+
+Driver — who was driving
+Lap number — which lap of that run/session
+Lap time — in seconds, or mm:ss.sss
+Session — e.g. "Endurance", "Autocross", "Skidpad", or just a date/event name (so you don't accidentally mix laps from different days/setups)
+
+!!!!Format!!!!
+
+Format — a simple CSV example
+
+Driver,Session,LapNumber,LapTime,TyreAge,Notes
+Alex,Endurance,1,68.4,1,
+Alex,Endurance,2,66.9,2,
+Alex,Endurance,3,66.7,3,
+Alex,Endurance,4,67.1,4,
+Sam,Endurance,5,67.8,5,driver swap this lap
+Sam,Endurance,6,66.2,6,
+
+Where the file goes:
+Same folder as script, f1-strategy-project:
+
+f1-strategy-project/
+├── f1_cache/
+├── pit_and_tire_analysis.py
+├── fs_team_data.csv          ← your new file goes here
+├── fs_analysis.py            ← new script I'll write for you
+├── .gitignore
+└── requirements.txt
