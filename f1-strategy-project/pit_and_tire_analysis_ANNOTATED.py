@@ -146,6 +146,3 @@ if not deg_df.empty:
 pit_loss_df.to_csv('pit_loss_results.csv', index=False)
 deg_df.to_csv('tire_degradation_results.csv', index=False)
 print("\nSaved pit_loss_results.csv and tire_degradation_results.csv")
-
-
-#working 13/8/26
