@@ -1,9 +1,22 @@
+"""
+Step 1: Pull real pit loss and tire degradation numbers from FastF1.
+
+Run this locally - it needs internet access to FastF1's data servers.
+
+Install first:
+    pip install fastf1 pandas
+"""
+
 import fastf1
 import pandas as pd
 
+# --- SETUP ---
+# FastF1 caches downloaded data locally so you don't re-download every run.
+# Create a folder called "f1_cache" next to this script first.
 fastf1.Cache.enable_cache('f1_cache')
 
-#picks a race
+# --- PICK A RACE ---
+# Start with one you know had pit stop action. 2023 Monza is a good example.
 YEAR = 2023
 GRAND_PRIX = 'Monza'
 SESSION = 'R'  # R = Race
@@ -16,7 +29,8 @@ laps = session.laps
 print(f"Loaded {len(laps)} laps from {YEAR} {GRAND_PRIX}")
 print("-" * 50)
 
-# --- PIT STOP LOSS TIME ---
+
+# --- PART A: PIT STOP LOSS TIME ---
 # A pit stop shows up in the data as a lap with a PitInTime and the
 # NEXT lap having a PitOutTime. We compare that lap's time to a normal
 # "green flag" lap to estimate how much time the stop actually cost.
@@ -69,7 +83,7 @@ if not pit_loss_df.empty:
 print("-" * 50)
 
 
-# --- TIRE DEGRADATION (fresh vs worn) ---
+# --- PART B: TIRE DEGRADATION (fresh vs worn) ---
 # For each stint, compare lap time early in the stint (lap 2-3 on that
 # tire, letting the out-lap settle) vs later in the stint, same compound.
 
@@ -117,6 +131,7 @@ def estimate_tire_degradation(laps_df):
 
     return pd.DataFrame(results)
 
+
 deg_df = estimate_tire_degradation(laps)
 print("TIRE DEGRADATION (seconds lost per lap, by compound):")
 print(deg_df)
@@ -127,6 +142,7 @@ if not deg_df.empty:
     print(deg_df.groupby('Compound')['DegPerLap_sec'].mean().round(3))
 
 # --- SAVE RESULTS ---
+# These get used as the real-world constants for the calculator in Step 2.
 pit_loss_df.to_csv('pit_loss_results.csv', index=False)
 deg_df.to_csv('tire_degradation_results.csv', index=False)
 print("\nSaved pit_loss_results.csv and tire_degradation_results.csv")
