@@ -30,7 +30,6 @@ cd C:\Users\allys\Motorsport
 cd f1-strategy-project
 python pit_and_tire_analysis.py
 
-
 !!!!!!!FUTUTRE USE!!!!!!!!
 
 when wanting to use this in the futre for example internally inside FS you will need:
