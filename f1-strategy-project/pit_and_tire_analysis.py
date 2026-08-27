@@ -5,7 +5,7 @@ fastf1.Cache.enable_cache('f1_cache')
 
 #picks a race
 YEAR = 2023
-GRAND_PRIX = 'Silverstone'
+GRAND_PRIX = 'Singapore'
 SESSION = 'R'  # R = Race
 
 session = fastf1.get_session(YEAR, GRAND_PRIX, SESSION)
@@ -164,3 +164,4 @@ deg_df.to_csv(
 print(f"\nSaved results for {race_name}")
 
 #working 13/8/26
+#updated 27/8/26
