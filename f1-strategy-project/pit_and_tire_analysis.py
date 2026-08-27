@@ -11,9 +11,10 @@ SESSION = 'R'  # R = Race
 session = fastf1.get_session(YEAR, GRAND_PRIX, SESSION)
 session.load()  # downloads laps, telemetry, timing data
 
+race_name = f"{YEAR} {GRAND_PRIX}"
 laps = session.laps
 
-print(f"Loaded {len(laps)} laps from {YEAR} {GRAND_PRIX}")
+print(f"Loaded {len(laps)} laps from {race_name}")
 print("-" * 50)
 
 # --- PIT STOP LOSS TIME ---
@@ -131,9 +132,11 @@ import os
 
 # Pit loss results
 file = 'pit_loss_results.csv'
+
 if os.path.exists(file):
     with open(file, 'a', newline='') as f:
         f.write('\n')
+        f.write(f'RACE: {race_name}\n')
 
 pit_loss_df.to_csv(
     file,
@@ -142,11 +145,14 @@ pit_loss_df.to_csv(
     index=False
 )
 
+
 # Tire degradation results
 file = 'tire_degradation_results.csv'
+
 if os.path.exists(file):
     with open(file, 'a', newline='') as f:
         f.write('\n')
+        f.write(f'RACE: {race_name}\n')
 
 deg_df.to_csv(
     file,
@@ -155,6 +161,6 @@ deg_df.to_csv(
     index=False
 )
 
-print("\nSaved new results with a blank line separating each run.")
+print(f"\nSaved results for {race_name}")
 
 #working 13/8/26
