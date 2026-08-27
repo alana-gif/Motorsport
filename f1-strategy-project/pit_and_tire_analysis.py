@@ -129,20 +129,32 @@ if not deg_df.empty:
 # --- SAVE RESULTS ---
 import os
 
+# Pit loss results
+file = 'pit_loss_results.csv'
+if os.path.exists(file):
+    with open(file, 'a', newline='') as f:
+        f.write('\n')
+
 pit_loss_df.to_csv(
-    'pit_loss_results.csv',
+    file,
     mode='a',
-    header=not os.path.exists('pit_loss_results.csv'),
+    header=not os.path.exists(file),
     index=False
 )
+
+# Tire degradation results
+file = 'tire_degradation_results.csv'
+if os.path.exists(file):
+    with open(file, 'a', newline='') as f:
+        f.write('\n')
 
 deg_df.to_csv(
-    'tire_degradation_results.csv',
+    file,
     mode='a',
-    header=not os.path.exists('tire_degradation_results.csv'),
+    header=not os.path.exists(file),
     index=False
 )
 
-print("\nSaved results to pit_loss_results.csv and tire_degradation_results.csv")
+print("\nSaved new results with a blank line separating each run.")
 
 #working 13/8/26
