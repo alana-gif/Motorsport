@@ -5,7 +5,7 @@ fastf1.Cache.enable_cache('f1_cache')
 
 #picks a race
 YEAR = 2023
-GRAND_PRIX = 'Monza'
+GRAND_PRIX = 'Silverstone'
 SESSION = 'R'  # R = Race
 
 session = fastf1.get_session(YEAR, GRAND_PRIX, SESSION)
@@ -127,9 +127,22 @@ if not deg_df.empty:
     print(deg_df.groupby('Compound')['DegPerLap_sec'].mean().round(3))
 
 # --- SAVE RESULTS ---
-pit_loss_df.to_csv('pit_loss_results.csv', index=False)
-deg_df.to_csv('tire_degradation_results.csv', index=False)
-print("\nSaved pit_loss_results.csv and tire_degradation_results.csv")
+import os
 
+pit_loss_df.to_csv(
+    'pit_loss_results.csv',
+    mode='a',
+    header=not os.path.exists('pit_loss_results.csv'),
+    index=False
+)
+
+deg_df.to_csv(
+    'tire_degradation_results.csv',
+    mode='a',
+    header=not os.path.exists('tire_degradation_results.csv'),
+    index=False
+)
+
+print("\nSaved results to pit_loss_results.csv and tire_degradation_results.csv")
 
 #working 13/8/26
