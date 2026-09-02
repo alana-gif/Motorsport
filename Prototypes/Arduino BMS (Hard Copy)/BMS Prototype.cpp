@@ -97,7 +97,7 @@ void loop() {
   delay(1000);
 }
 
-//instiuctions for your tiny brain .
+//instructions
 //pot 1 is the pretend battery voltage
 //pot 1 is also repsonsible for doing the math to calculate the SOC
 //pot 2 is the pretend battery tempreture
