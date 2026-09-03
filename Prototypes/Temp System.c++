@@ -133,3 +133,4 @@ float read_temperature() {
   int raw = analogRead(A2);
   return (raw / 1023.0) * 100.0 - 25.0; // example: range -25°C to 75°C
 }
+
