@@ -5,7 +5,7 @@ fastf1.Cache.enable_cache('f1_cache')
 
 #picks a race
 YEAR = 2023
-GRAND_PRIX = 'Spanish'
+GRAND_PRIX = 'Dutch'
 SESSION = 'R'  # R = Race
 race_name = f'{YEAR} {GRAND_PRIX}'
 
