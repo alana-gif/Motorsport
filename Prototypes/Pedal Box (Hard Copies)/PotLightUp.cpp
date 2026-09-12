@@ -31,4 +31,3 @@ void loop() {
   Serial.println(potValue); // Optional: see values in Serial Monitor
   delay(500);
 }
-
