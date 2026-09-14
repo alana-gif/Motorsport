@@ -7,6 +7,7 @@ Install first:
     pip install fastf1 pandas
 """
 
+
 import fastf1
 import pandas as pd
 
