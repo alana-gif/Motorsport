@@ -30,8 +30,6 @@ laps = session.laps
 print(f"Loaded {len(laps)} laps from {YEAR} {GRAND_PRIX}")
 print("-" * 50)
 
-
-
 # --- PART A: PIT STOP LOSS TIME ---
 # A pit stop shows up in the data as a lap with a PitInTime and the
 # NEXT lap having a PitOutTime. We compare that lap's time to a normal
